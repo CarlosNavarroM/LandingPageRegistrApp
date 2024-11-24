@@ -5,14 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RegistrAPP</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ocultar QR por defecto y mostrar solo en escritorio */
+        #qr-section {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            #qr-section {
+                display: block;
+            }
+            #mobile-download {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 3rem 1rem;
+        }
+
+        .hero-section h1 {
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        .hero-section a {
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .feature-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .feature-card h4 {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #343a40;
+            color: #ccc;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
 <!-- Hero Section -->
-<section class="bg-primary text-white text-center p-5">
-    <h1 class="display-4">RegistrAPP</h1>
-    <p class="lead">Aplicación para el registro de asistencia - Un proyecto de DuocUC</p>
-    <a href="https://drive.google.com/file/d/18G8u4kL_zujJi0pIfPk24XTWttKyMgba/view?usp=sharing" class="btn btn-light btn-lg mt-3" target="_blank">Descargar APK</a>
+<section class="hero-section text-center">
+    <h1>RegistrAPP</h1>
+    <p>Aplicación para el registro de asistencia - Un proyecto de DuocUC</p>
+
+    <!-- Botón para dispositivos móviles -->
+    <a id="mobile-download" href="https://drive.google.com/file/d/18G8u4kL_zujJi0pIfPk24XTWttKyMgba/view?usp=sharing" 
+       class="btn btn-light btn-lg mt-3" target="_blank">
+        Descargar APK
+    </a>
+
+    <!-- QR Code para escritorio -->
+    <div id="qr-section" class="mt-4">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://drive.google.com/file/d/18G8u4kL_zujJi0pIfPk24XTWttKyMgba/view?usp=sharing&size=200x200" 
+             alt="Escanea para descargar la APK">
+        <p class="mt-2">Escanea el código QR para descargar la APK</p>
+    </div>
 </section>
 
 <!-- About Section -->
